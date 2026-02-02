@@ -21,6 +21,7 @@ jobs:
         with:
           ruby-version: 3.1.4
           bundler-cache: true
+          working-directory: ./backend
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
@@ -40,6 +41,7 @@ jobs:
         with:
           ruby-version: 3.1.4
           bundler-cache: true
+          working-directory: ./backend
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
@@ -58,6 +60,7 @@ jobs:
         with:
           ruby-version: 3.1.4
           bundler-cache: true
+          working-directory: ./backend
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
@@ -96,6 +99,7 @@ jobs:
         with:
           ruby-version: 3.1.4
           bundler-cache: true
+          working-directory: ./backend
 
       - name: Run tests
         env:
